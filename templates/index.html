@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Background Removal</title>
+    <meta name="description" content="Revamp your images effortlessly with Chitraai.pro's top-tier background removal service. Our advanced tools seamlessly eliminate backgrounds, ensuring your visuals are professional and polished, ready to enhance your projects.">
+    <meta name="keywords" content="remove background from image, rmage background remover, remove background from image free, remove image background, how to remove background from image, remove white background from image, remove background image, remove background from image iphone">
+    <meta name="author" content="CITRA AI">
+    <meta name="robots" content="index, follow">
+    <!-- Font Awesome Stylesheet (Make sure to include this link) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <style>
+ body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+
+header {
+      background-color: white;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      color: #333;
+      text-align: left;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+      transition: background-color 0.3s, padding 0.3s;
+    }
+
+    header.active {
+      background-color: #fff;
+      padding: 10px 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .get-started-button {
+      background-color: #3498db;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    .login-signup {
+      background-color: white;
+      color: #3498db;
+      padding: 8px 16px;
+      font-size: 1.2em;
+      border: 2px solid #3498db;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 8px;
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin-right: 15px;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 260px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+    .ai-tools-section {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .ai-tools-heading {
+      font-size: 3em;
+    }
+
+    .ai-tools-description {
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .image-container a {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    .image-container img {
+      width: 80%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    .menu-icon {
+      font-size: 2em;
+      color: #3498db;
+      display: none;
+      cursor: pointer;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 3;
+    }
+
+    .menu-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background-color: white;
+      text-align: center;
+      z-index: 2;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-items {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .menu-items a {
+      font-size: 1.5em;
+      margin: 10px 0;
+    }
+
+main {
+  text-align: center;
+  padding-top: 200px; /* Adjust the padding top value as needed */
+}
+
+.main-content {
+        margin-top: -20px;
+      }
+
+      .title {
+            font-size: 5.5em; /* Adjusted font size */
+            font-weight: bold;
+            margin-bottom: 80px;
+            
+        }
+
+.upload-box {
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  display: flex; /* Assuming you want a horizontal layout */
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: auto; /* Center vertically and horizontally */
+  padding: 20px;
+}
+
+#drag-drop-message {
+  position: absolute;
+  top: 500px;
+  font-size: 24px;
+}
+
+#upload-button {
+  background-color: #0298FF;
+  color: white;
+  padding: 20px 40px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  font-size: 20px; /* Adjust the font size here */
+}
+
+#upload-button:hover {
+  background-color: #0077CC;
+}
+
+.hidden {
+  display: none;
+}
+
+.background-removed-container {
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  display: none; /* Hide by default */
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: 20px auto; /* Center horizontally and add margin from top */
+  padding: 20px;
+}
+
+.background-removed-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+/* Styling for the download button */
+.download-button {
+  background-color: #0298FF;
+  color: white;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  font-size: 20px; /* Adjust the font size here */
+}
+
+.download-button:hover {
+  background-color: #c3c5c7;
+}
+
+/* Animation class */
+@keyframes uploadComplete {
+  0% { background-color: #f1f1f1; }
+  20% { background-color: #fc7878; }
+  40% { background-color: #383737; }
+  60% { background-color: #0059ff; }
+  80% { background-color: #b8b7b7; }
+  100% { background-color: #ff0000; }
+}
+
+
+
+.content-section {
+    background-color: #c5c4c4; /* White background color */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+    max-width: 97%; /* Set max-width for screens larger than 768px */
+    margin: 150px auto; /* Center the section horizontally and add margin */
+    display: flex;
+    justify-content: space-between; /* Align items horizontally with space between */
+    align-items: center; /* Align items vertically */
+    height: 500px; /* Adjust the height as needed */
+}
+
+
+.video {
+  flex: 1; /* Take up 50% of the available space */
+  margin-right: 20px; /* Adjust spacing between video and text */
+}
+
+.text {
+  flex: 1; /* Take up 50% of the available space */
+  margin-right: 20px; /* Adjust spacing between video and text */
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: white; /* Set section background color */
+}
+
+.image {
+    flex: 1;
+    margin-right: 20px; /* Adjust margin to create space between image and text */
+    order: 2; /* Change the order to 2 to move the image to the right */
+}
+
+.text {
+    flex: 1;
+    margin-left: 20px; /* Adjust margin to create space between text and image */
+    order: 1; /* Change the order to 1 to move the text to the left */
+}
+
+.text h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.text p {
+    font-size: 18px;
+}
+
+.our-tools-section {
+  background-color: #c5c4c4;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+  display: flex;
+  align-items: center;
+  padding: 40px; /* Add padding */
+  max-height: 400px; /* Set maximum height */
+  overflow: hidden; /* Hide overflow content */
+  margin-top: 50px; /* Add margin-top to push it down */
+}
+
+
+.our-tools-section .image {
+  flex: 1;
+  order: 2; /* Change order */
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+}
+
+.our-tools-section .image img {
+  max-width: 100%; /* Make the image responsive */
+  max-height: 450px; /* Set maximum height for the image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Add border radius for rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+.our-tools-section .text {
+  flex: 1;
+  order: 2; /* Change order */
+}
+
+.our-tools-section .image img {
+  max-width: 100%; /* Make image responsive */
+  height: auto;
+}
+
+.our-tools-section .text h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.our-tools-section .text p {
+  font-size: 18px;
+}
+
+.faq-section {
+  background-color: #000000; /* Set background color */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Set shadow color */
+  color: rgb(255, 255, 255); /* Set text color */
+  padding: 40px; /* Add padding */
+}
+
+.faq-container {
+  max-width: 2400px; /* Set maximum width */
+  margin: 0 auto; /* Center align */
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Distribute space between columns */
+}
+
+.faq-column {
+  width: 48%; /* Set width for each column */
+}
+
+.faq-item {
+  margin-bottom: 40px; /* Add margin between FAQ items */
+}
+
+.faq-item h3 {
+  font-size: 20px; /* Set font size for questions */
+}
+
+.faq-item p {
+  font-size: 16px; /* Set font size for answers */
+}
+
+
+
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  margin-top: 40px; /* Increase the margin-top to create more space */
+}
+
+
+    .contact-us {
+      margin-top: 20px;
+    }
+
+    .footer-text {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .footer-column {
+      flex: 1;
+      margin: 0 20px;
+    }
+
+    /* Social media styles */
+    .social-media {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .social-media a {
+      text-decoration: none;
+      color: white;
+      margin: 0 10px;
+      font-size: 1.5em;
+    }
+
+    .social-media i {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    /* Add this style to set the font size for the "About Us" content */
+    .about-us-content {
+      font-size: 1em; /* Adjust the size as needed */
+    }
+
+    /* New styles for the About Us dropdown */
+    .about-us-dropdown {
+      display: none;
+      padding: 10px;
+    }
+
+    .about-us-dropdown.active {
+      display: block;
+    }
+    
+
+
+@media only screen and (max-width: 768px) {
+
+  .image-container {
+        flex-direction: column;
+      }
+
+      .image-container div {
+        width: 100%;
+      }
+
+      .login-signup,
+      header nav {
+        display: none;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      nav {
+        order: 2;
+      }
+
+      .menu-container.active {
+        display: block;
+      }
+
+      .menu-container.active .login-signup {
+        display: block;
+        margin-top: 10px;
+        font-size: .7em;
+        margin-right: 50;
+      }
+
+      .menu-container.active nav {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+      }
+
+      .menu-icon.active {
+        right: 10px;
+      }
+  main {
+    display: block;
+    padding-top: 100px; /* Adjust as needed */
+  }
+
+  #drag-drop-message {
+  position: absolute;
+  top: 450px; /* Adjust top position */
+  font-size: 20px;
+  margin-left: 45px; /* Adjust left margin */
+  margin-right: auto; /* Adjust right margin */
+}
+
+  .upload-box {
+    width: 300px; /* Adjust width */
+    height: 300px; /* Adjust height */
+    text-align: center;
+    justify-content: initial;
+    align-items: initial;
+  }
+
+  #upload-button {
+    padding: 15px 30px; /* Adjust padding */
+    font-size: 16px; /* Adjust font size */
+    width: 200px; /* Adjust width */
+    height: 50px; /* Adjust height */
+    margin-top: 120px; /* Adjust top margin */
+    margin-left: auto; /* Adjust left margin */
+    margin-right: auto; /* Adjust right margin */
+  }
+  
+  .download-button {
+    padding: 5px 20px; /* Adjust padding */
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .background-removed-container {
+    width: 300px; /* Adjust width */
+    height: 300px; /* Adjust height */
+    margin: 20px auto; /* Center horizontally and add margin from top */
+  }
+
+  .background-removed-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+  }
+  .download-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .title {
+        font-size: 3.5em;
+    }
+
+    .content-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .video, .text {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .video iframe {
+        width: 90%;
+        height: auto;
+    }
+
+    .text {
+    flex: 1; /* Take up 100% of the available space */
+    margin-right: 0; /* Remove margin-right */
+  }
+
+  .text h3 {
+    font-size: 20px; /* Adjust font size for smaller screens */
+    margin-bottom: 8px; /* Adjust margin-bottom */
+  }
+
+  .text p {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+    
+  .image-container {
+        flex-direction: column;
+        padding: 10px; /* Adjust padding */
+    }
+
+    .image,
+    .text {
+        width: 100%;
+        margin: 10px 0; /* Adjust margin */
+    }
+
+    .image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .text h3 {
+        font-size: 18px; /* Adjust font size for smaller screens */
+        margin-bottom: 6px; /* Adjust margin */
+    }
+
+    .text p {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+    
+    .our-tools-section {
+    flex-direction: column; /* Stack elements vertically */
+    padding: 20px; /* Reduce padding for smaller screens */
+    margin-top: 80px; /* Adjust margin for better layout */
+    max-height: unset; /* Remove max-height for better content visibility */
+  }
+
+  .our-tools-section .image {
+    order: 1; /* Change order for smaller screens */
+    margin-bottom: 10px; /* Add margin-bottom for smaller screens */
+  }
+
+  .our-tools-section .image img {
+    max-height: 200px; /* Adjust maximum height for smaller screens */
+    border-radius: 4px; /* Adjust border radius for smaller screens */
+  }
+
+  .our-tools-section .text {
+    order: 2; /* Change order for smaller screens */
+    width: 100%;
+    margin: 10px 0;
+    
+  }
+
+  .our-tools-section .text h3 {
+    font-size: 16px; /* Adjust font size for smaller screens */
+    margin-bottom: 8px; /* Adjust margin for smaller screens */
+  }
+
+  .our-tools-section .text p {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    margin-bottom: 10px; /* Adjust margin for smaller screens */
+  }
+
+  .faq-container {
+  max-width: 80%; /* Set maximum width to adapt to smaller screens */
+  padding: -10px; /* Reduce padding for smaller screens */
+  flex-wrap: wrap; /* Allow columns to wrap to the next line */
+}
+
+.faq-column {
+  width: 100%; /* Set width to full for smaller screens */
+  margin-bottom: -10px; /* Add margin between columns */
+}
+
+.faq-item {
+  margin-bottom: 10px; /* Reduce margin between FAQ items for smaller screens */
+}
+
+.faq-item h3 {
+  font-size: 14px; /* Decrease font size for questions */
+}
+
+.faq-item p {
+  font-size: 10px; /* Decrease font size for answers */
+}
+    
+    footer {
+        padding: 10px;
+      }
+
+      .footer-text {
+        font-size: 0.8em;
+      }
+
+      .about-us,
+      .our-tools,
+      .privacy-policy,
+      .copyright-text,
+      .contact-us {
+        margin: 20px 0;
+        text-align: center;
+      }
+
+      /* Additional styles for the About Us dropdown on small screens */
+      .about-us-content {
+        display: none;
+      }
+
+      .about-us-dropdown.active .about-us-content {
+        display: block;
+      }
+    }
+
+    </style>
+    <script>
+       function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function handleDrop(event) {
+            event.preventDefault();
+            var files = event.dataTransfer.files;
+            handleFiles(files);
+        }
+
+        function handleFiles(files) {
+            var file = files[0];
+            if (file && file.type.match('image.*')) {
+                var reader = new FileReader();
+                reader.onload = function(event) {
+                    var img = new Image();
+                    img.src = event.target.result;
+                    img.onload = function() {
+                        var canvas = document.createElement('canvas');
+                        canvas.width = 400;
+                        canvas.height = 400;
+                        var ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, 400, 400);
+                        document.getElementById('uploadForm').appendChild(canvas);
+                        document.getElementById('fileInput').files = files;
+                        document.getElementById('uploadForm').submit();
+
+                        // Trigger animation after upload is complete
+                        var uploadButton = document.getElementById('upload-button');
+                        uploadButton.style.animation = 'uploadComplete 1s forwards';
+                    };
+                };
+                reader.readAsDataURL(file);
+            } else {
+                alert('Please select an image file.');
+            }
+        }
+
+        function showBackgroundRemovedImage(filename) {
+            var container = document.querySelector('.background-removed-container');
+            var image = container.querySelector('.background-removed-image');
+            image.src = filename;
+            container.style.display = 'flex';
+        }
+    </script>
+</head>
+<body>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  <div class="menu-container">
+    <div class="menu-items">
+      <div class="login-signup">Login/Sign Up</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <a href="#services">Services</a>
+          <div class="dropdown-content">
+            <a href="Image Upscale & Enhance.html">AI Image Upscaling</a>
+            <a href="image_background_remove.html">AI Background Remove</a>
+            <a href="Image Unwanted Object Remove.html">Remove Unwanted Object</a>
+            <a href="Image Lip Sync.html">Image Lip-Sync</a>
+          </div>
+        </div>
+        <a href="#tools">Tools</a>
+        <a href="#price">Price</a>
+      </nav>
+    </div>
+  </div>
+
+  <header>
+    <div>
+      <h1>Chitra.Pro</h1>
+      <p>Your Image Processing Solution</p>
+      <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <a href="#services">Services</a>
+          <div class="dropdown-content">
+            <a href="Image Upscale & Enhance.html">AI Image Upscaling</a>
+            <a href="image_background_remove.html">AI Background Remove</a>
+            <a href="Image Unwanted Object Remove.html">Remove Unwanted Object</a>
+            <a href="Image Lip Sync.html">Image Lip-Sync</a>
+          </div>
+        </div>
+        <a href="#tools">Tools</a>
+        <a href="#price">Price</a>
+      </nav>
+    </div>
+    <div class="login-signup">
+      Login/Sign Up
+    </div>
+  </header>
+  <div class="main-content">
+    <main>
+        <h2 class="title">Image Background Removal</h2>
+
+        <div class="upload-box" ondrop="handleDrop(event)" ondragover="allowDrop(event)">
+            <p id="drag-drop-message">Drag and drop image here</p>
+            <button id="upload-button" onclick="document.getElementById('fileInput').click()">or Click to Upload</button>
+        </div>
+
+        <form action="/" method="POST" enctype="multipart/form-data" class="hidden" id="uploadForm">
+            <input type="file" name="file" id="fileInput" accept="image/*" onchange="handleFiles(this.files)" required>
+        </form>
+
+        <div class="background-removed-container">
+            <img src="" alt="Background Removed Image" class="background-removed-image">
+        </div>
+
+        {% if result %}
+        <script>
+            showBackgroundRemovedImage("{{ url_for('download', filename=filename) }}");
+        </script>
+        <h3><a href="{{ url_for('download', filename=filename) }}" class="download-button" download>Download</a></h3>
+        {% endif %}
+
+        {% if error %}
+        <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        <section class="content-section">
+          <div class="video">
+              <!-- Replace the placeholder video link with your YouTube embed code -->
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/sOkhgBFent0?si=kJGeheuEF_azcnXM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+          </div>
+          <div class="text">
+              <h3>Remove free image backgrounds 100% automatically in one click</h3>
+              <p>Introducing Chitra.Pro – your ultimate solution for hassle-free background removal. With just a</p>
+              <p>click, remove image backgrounds effortlessly and enhance your visuals instantly. Trust Chitra.Pro</p>
+              <p>for seamless image editing and make your images stand out. Visit us today for a smoother editing</p>
+              <p>experience!</p>
+          </div>
+      </section>
+
+      <div class="image-container">
+        <div class="image">
+            <img src="https://i.postimg.cc/SKwgxbts/boro-00006-00038.jpg" alt="Image">
+        </div>
+        <div class="text">
+          <h3>Revitalize Your Portraits: Premium Human Image Background Removal Service</h3>
+          <p>Experience the transformation of your portraits with our expert human image background removal</p> 
+          <p>service. Bid farewell to distracting backgrounds and welcome clean, polished visuals that</p> 
+          <p>accentuate your subject's essence. Whether you're a photographer striving for a professional</p> 
+          <p>portfolio or a business in need of captivating marketing materials, our service ensures your images</p> 
+          <p>command attention. By concentrating solely on your subject, we enhance professionalism and versatility,</p> 
+          <p>enabling your visuals to effectively convey your message. Elevate your brand with pristine, engaging</p> 
+          <p>portraits that leave a lasting impression on your audience. Discover the potential of your images today</p> 
+          <p>with our human image background removal service</p>
+          
+      </div>
+    </div>
+
+    <section class="our-tools-section">
+      <div class="image">
+        <img src="https://i.postimg.cc/B626RHBq/boro-0000-00000.jpg" alt="Image">
+      </div>
+      <div class="text">
+        <h3>Enhance Your Animal Photography: Professional Background Removal Services</h3>
+          <p>Elevate your animal imagery with our expert background removal service tailored</p> 
+          <p>for photographers, pet enthusiasts, and businesses alike. By seamlessly eliminating</p> 
+          <p>distracting backgrounds, our service ensures your animal subjects take center stage,</p> 
+          <p>capturing their beauty and character. Whether you're showcasing wildlife in their</p> 
+          <p>natural habitats or capturing the charm of beloved pets, our precise editing enhances</p> 
+          <p>professionalism and versatility. Stand out with clean, polished visuals across websites,</p> 
+          <p>advertisements, and social media, reinforcing your brand's image and credibility.</p> 
+          <p>Experience the transformative power of animal image background removal today.</p>
+          
+      </div>
+    </section>
+
+    <div class="image-container">
+      <div class="image">
+          <img src="https://i.postimg.cc/mgrFm7Tv/boro-006-00021.jpg" alt="Image">
+      </div>
+      <div class="text">
+        <h3>Enhance Your Modeling Portfolio: Professional Background Removal Services</h3>
+        <p>Elevate your modeling images with our expert background removal service tailored</p> 
+        <p>for models, photographers, and agencies. By seamlessly eliminating distracting</p> 
+        <P>backgrounds, our service ensures your model takes center stage, showcasing their</p> 
+        <p>beauty and style. Whether you're building a portfolio, updating your website, or</p> 
+        <p>creating marketing materials, our precise editing enhances professionalism and</p> 
+        <p>versatility. Stand out with clean, polished visuals across various platforms,</p> 
+        <p>reinforcing your brand's image and credibility in the competitive modeling industry.</p> 
+        <P>Experience the transformative power of modeling image background removal today.</p>
+        
+    </div>
+  </div>
+
+  
+
+  <section class="faq-section">
+    <div class="faq-container">
+        <div class="faq-column">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>1. What is Chitra.Pro?</h3>
+                <p>Chitra.Pro is an image processing solution that offers various AI-powered tools, including image background removal, image upscaling, object removal, and image lip-sync.</p>
+            </div>
+            <div class="faq-item">
+                <h3>2. How does the image background removal tool work?</h3>
+                <p>The image background removal tool uses advanced AI algorithms to automatically detect and remove the background from images, providing users with clean, transparent backgrounds.</p>
+            </div>
+            <div class="faq-item">
+                <h3>3. Is Chitra.Pro free to use?</h3>
+                <p>Yes, Chitra.Pro offers free access to basic features, but there may be premium features or usage limits that require a subscription or payment.</p>
+            </div>
+        </div>
+        <div class="faq-column">
+            <div class="faq-item">
+                <h3>7. What are the benefits of using Chitra.Pro?</h3>
+                <p>Chitra.Pro helps users enhance their images, improve productivity, and achieve professional-looking results with ease. It offers a range of powerful AI-driven tools for various image processing tasks.</p>
+            </div>
+            <div class="faq-item">
+                <h3>8. Can I use Chitra.Pro on mobile devices?</h3>
+                <p>Yes, Chitra.Pro is designed to be mobile-friendly and can be accessed and used on a variety of devices, including smartphones and tablets.</p>
+            </div>
+            <div class="faq-item">
+                <h3>9. Are there any limitations on the file size or format?</h3>
+                <p>Chitra.Pro supports a wide range of image file formats and sizes, but there may be limitations on file size for processing efficiency. Please refer to the platform's guidelines for specific details.</p>
+            </div>
+        </div>
+        <div class="faq-column">
+            <div class="faq-item">
+                <h3>4. Can I download the edited images?</h3>
+                <p>Yes, after processing your images, you can download them with the background removed or edited according to your preferences.</p>
+            </div>
+            <div class="faq-item">
+                <h3>5. How accurate is the background removal tool?</h3>
+                <p>The accuracy of the background removal tool depends on various factors such as image quality, complexity of the background, and settings chosen. In general, it provides high accuracy for most images.</p>
+            </div>
+            <div class="faq-item">
+                <h3>6. Is my data secure on Chitra.Pro?</h3>
+                <p>Chitra.Pro takes data security seriously and employs industry-standard encryption and security measures to protect user data.</p>
+            </div>
+        </div>
+        <div class="faq-column">
+            <div class="faq-item">
+                <h3>10. How can I contact Chitra.Pro support?</h3>
+                <p>You can reach out to Chitra.Pro support through email at support@chitra.pro or by using the contact form available on the website.</p>
+            </div>
+            <div class="faq-item">
+                <h3>11. Can I integrate Chitra.Pro with other applications?</h3>
+                <p>Chitra.Pro offers integration options with popular platforms and applications through APIs and plugins, allowing for seamless workflow integration.</p>
+            </div>
+            <div class="faq-item">
+                <h3>12. Is there a trial period for premium features?</h3>
+                <p>Yes, Chitra.Pro may offer a trial period for premium features, allowing users to explore and test advanced functionalities before making a purchase decision.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+  
+    
+
+      </main>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-text">
+    <div class="footer-column">
+      <div class="about-us">
+        <p class="about-us-title" onclick="toggleAboutUsDropdown()">About Us</p>
+        <div class="about-us-dropdown">
+          <p class="about-us-content">Founded in 2024, with a group of technomaniacs, Chitra.AI leverages the power of artificial intelligence and computer vision to deliver a wide range of products that make your life much easier and your work more productive. About Chitra.AI's commitment to innovation and excellence: Chitra.AI is dedicated to pushing the boundaries of what's possible with AI-driven image processing. Our team of experts is passionate about delivering state-of-the-art solutions to meet your unique needs.</p>
+        </div>
+      </div>
+      <div class="contact-us">
+        <p>Contact Us</p>
+        <p>US Office - North Carolina</p>
+        <p>India Office - Kolkata, India</p>
+        <p>Email: contact@chitra.com</p>
+        <p>WhatsApp: +919635507711</p>
+      </div>
+    </div>
+    <div class="footer-column">
+      <div class="our-tools">
+        <p>Our Tools</p>
+        <p>AI Image Upscaling</p>
+        <p>AI Background Remove</p>
+        <p>Remove Unwanted Object</p>
+        <p>Image Lip-Sync</p>
+      </div>
+      <div class="privacy-policy">
+        <p><a href="Privacy_Policy.html">Privacy Policy</a></p>
+      </div>
+    </div>
+    <div class="footer-column">
+      <div class="social-media">
+        <p>Follow us on social media</p>
+        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    var menuContainer = document.querySelector('.menu-container');
+    menuContainer.classList.toggle('active');
+    var menuIcon = document.querySelector('.menu-icon');
+    menuIcon.classList.toggle('active');
+  }
+
+  function fixHeader() {
+    var header = document.querySelector('header');
+    var scrollPosition = window.scrollY;
+
+    if (scrollPosition > 0) {
+      header.classList.add('active');
+    } else {
+      header.classList.remove('active');
+    }
+  }
+
+  function toggleAboutUsDropdown() {
+    var aboutUsDropdown = document.querySelector('.about-us-dropdown');
+    aboutUsDropdown.classList.toggle('active');
+  }
+
+  window.addEventListener('scroll', fixHeader);
+
+  window.addEventListener('load', fixHeader);
+</script>
+ </body>  
+</html>
